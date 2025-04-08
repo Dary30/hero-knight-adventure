@@ -48,10 +48,13 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_4pvrx")
 autoplay = "default"
 frame = 3
 frame_progress = 0.0352633
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-12, 16, -12, -6, -12, -6, 0, -12, 0, -12, 12, -6, 12, 16)
+position = Vector2(16, 16)
+scale = Vector2(1.06771, 1.00446)
+polygon = PackedVector2Array(-11.239, 15.9289, -11.239, -5.97333, -11.239, -5.97333, 0, -12, 0, -12, 11.239, -5.97333, 11.239, 15.9289)

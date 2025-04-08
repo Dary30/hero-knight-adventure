@@ -206,6 +206,7 @@ _data = {
 [node name="Spike" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 5)
 sprite_frames = SubResource("SpriteFrames_icsxb")
 frame = 3
 
@@ -216,6 +217,7 @@ libraries = {
 autoplay = "spike_animated"
 
 [node name="Killzone" parent="." instance=ExtResource("2_alo23")]
+position = Vector2(6, 5)
 
 [node name="CollisionSecondFrame" type="CollisionPolygon2D" parent="Killzone"]
 polygon = PackedVector2Array(-2, 7, 0, 3, 2, 7)

@@ -175,11 +175,13 @@ size = Vector2(19, 27)
 script = ExtResource("1_pukqy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 11)
 sprite_frames = SubResource("SpriteFrames_mitu5")
 animation = &"rising"
 autoplay = "inactive"
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 11)
 collision_layer = 8
 monitorable = false
 

@@ -9,14 +9,15 @@ size = Vector2(32, 8)
 collision_layer = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 8.5)
 
 [node name="Platforms" type="Sprite2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(16, 4.5)
 texture = ExtResource("1_i3ytt")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
+position = Vector2(16, 4.5)
 shape = SubResource("RectangleShape2D_v31ff")
 one_way_collision = true

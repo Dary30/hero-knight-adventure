@@ -201,27 +201,27 @@ collision_mask = 31
 script = ExtResource("1_hcn6v")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, -7)
+position = Vector2(7, 12)
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_gin2a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -12)
+position = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_c7tmc")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -7)
+position = Vector2(7, 12)
 shape = SubResource("CapsuleShape2D_7n8ao")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(1, -8)
+position = Vector2(7, 11)
 zoom = Vector2(4, 4)
-limit_left = -26
-limit_bottom = 155
+limit_left = 0
+limit_bottom = 540
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
