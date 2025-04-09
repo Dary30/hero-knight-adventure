@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ljk0lsnem58n"]
+[gd_scene load_steps=9 format=3 uid="uid://ljk0lsnem58n"]
 
+[ext_resource type="Script" uid="uid://dp6k6mgd1dob2" path="res://scripts/portal.gd" id="1_7nybk"]
 [ext_resource type="Texture2D" uid="uid://6vkfnq6tj45q" path="res://assets/sprites/portal.png" id="1_v0xau"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ffj6"]
@@ -46,15 +47,19 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_7nybk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_4pvrx")
 autoplay = "default"
-frame = 3
-frame_progress = 0.0352633
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 position = Vector2(16, 16)
 scale = Vector2(1.06771, 1.00446)
 polygon = PackedVector2Array(-11.239, 15.9289, -11.239, -5.97333, -11.239, -5.97333, 0, -12, 0, -12, 11.239, -5.97333, 11.239, 15.9289)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -181,12 +181,11 @@ animation = &"rising"
 autoplay = "inactive"
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(8, 11)
 collision_layer = 8
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 2.5)
+position = Vector2(9.5, 13.5)
 shape = SubResource("RectangleShape2D_fr4qt")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]

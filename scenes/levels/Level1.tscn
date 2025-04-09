@@ -181,6 +181,21 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_lha2r")
 
+[sub_resource type="Animation" id="Animation_6owa4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(328, 464)]
+}
+
 [sub_resource type="Animation" id="Animation_lha2r"]
 resource_name = "move"
 loop_mode = 2
@@ -195,21 +210,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(328, 464), Vector2(408, 464)]
-}
-
-[sub_resource type="Animation" id="Animation_6owa4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(328, 464)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n5pya"]
@@ -304,3 +304,6 @@ position = Vector2(492, 469)
 [node name="Portal" parent="." instance=ExtResource("11_dqba7")]
 z_index = -1
 position = Vector2(664, 130)
+
+[node name="Node2D" parent="." instance=ExtResource("11_dqba7")]
+position = Vector2(128, 464)
