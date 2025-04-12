@@ -304,6 +304,3 @@ position = Vector2(492, 469)
 [node name="Portal" parent="." instance=ExtResource("11_dqba7")]
 z_index = -1
 position = Vector2(664, 130)
-
-[node name="Node2D" parent="." instance=ExtResource("11_dqba7")]
-position = Vector2(128, 464)
