@@ -1,6 +1,7 @@
 extends Area2D
 
 var is_player_dead: bool = false
+
 @onready var timer: Timer = $Timer
 
 

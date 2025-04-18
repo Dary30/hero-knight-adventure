@@ -1,7 +1,9 @@
 extends Node2D
 
 const SPEED = 60
+
 var direction = 1
+
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

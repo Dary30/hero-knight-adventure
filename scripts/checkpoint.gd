@@ -3,6 +3,7 @@ class_name Checkpoint
 
 var activated: bool = false
 var raised: bool = false
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 

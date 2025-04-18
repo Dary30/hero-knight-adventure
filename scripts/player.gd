@@ -2,10 +2,12 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 130.0
-var can_move: bool = true
-@export_range(0, 1) var deceleration = 0.2
+
 @export var jump_force = -300
+@export_range(0, 1) var deceleration = 0.2
 @export_range(0, 1) var decelerate_on_jump_release = 0.5
+
+var can_move: bool = true
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
