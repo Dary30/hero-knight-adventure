@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=4 uid="uid://cxr50oxeme7c"]
 
 [ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_ue060"]
-[ext_resource type="Texture2D" uid="uid://v2c7swtvmc5k" path="res://assets/sprites/ui_coin.png" id="2_oswwn"]
+[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/HUD.tscn" id="2_ue060"]
 [ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/Player.tscn" id="3_c2uwi"]
 [ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/Killzone.tscn" id="4_n5l3n"]
 [ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_6se2n"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/Checkpoint.tscn" id="7_auvjl"]
 [ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/Spike.tscn" id="8_l5fl4"]
 [ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/Coin.tscn" id="9_nx170"]
-[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/Portal.tscn" id="10_h27y2"]
+[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/Portal.tscn" id="11_oswwn"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dlxjb"]
 
@@ -180,24 +180,13 @@ physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_af4br")
 
-[node name="Tutorial" type="Node2D"]
+[node name="Level0" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_ue060")
 
-[node name="UIManager" type="CanvasLayer" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="UIManager"]
-anchors_preset = -1
-anchor_right = 0.0347222
-anchor_bottom = 0.0617284
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 24.0
-offset_bottom = 24.0
-texture = ExtResource("2_oswwn")
-metadata/_edit_use_anchors_ = true
+[node name="HUD" parent="." instance=ExtResource("2_ue060")]
 
 [node name="Player" parent="." instance=ExtResource("3_c2uwi")]
 position = Vector2(64, 445)
@@ -309,5 +298,7 @@ position = Vector2(171, 449)
 [node name="Coin2" parent="Coins" instance=ExtResource("9_nx170")]
 position = Vector2(187, 449)
 
-[node name="Node2D" parent="." instance=ExtResource("10_h27y2")]
-position = Vector2(272, 432)
+[node name="Node2D" parent="." instance=ExtResource("11_oswwn")]
+position = Vector2(208, 432)
+
+[connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]

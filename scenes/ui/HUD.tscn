@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://unsfsl1nuo3c"]
+
+[ext_resource type="Script" uid="uid://v1b1ultkghdk" path="res://scripts/UI/hud.gd" id="1_6ll6g"]
+[ext_resource type="Texture2D" uid="uid://v2c7swtvmc5k" path="res://assets/sprites/ui_coin.png" id="1_atyv1"]
+[ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_6ll6g"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_6ll6g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 95.0
+offset_bottom = 50.0
+theme_override_constants/separation = -2
+alignment = 1
+
+[node name="CoinIcon" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_atyv1")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CoinCounter" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.984314, 0.768627, 0.105882, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_6ll6g")
+theme_override_font_sizes/font_size = 24
+text = "0"

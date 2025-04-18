@@ -1,8 +1,10 @@
 extends Node
 
-var score: int = 0
-var current_checkpoint: Checkpoint
+signal coins_updated(amount: int)
+
 var player: Player
+var coins: int = 0
+var current_checkpoint: Checkpoint
 
 
 func respawn_player():
@@ -11,6 +13,7 @@ func respawn_player():
 		player.enable_controls()
 
 
-func add_point():
-	score += 1
-	print(score)
+func add_coin(coins_gained: int):
+	coins += coins_gained
+	emit_signal("coins_updated", coins)
+	print(coins)
