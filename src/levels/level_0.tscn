@@ -1,15 +1,15 @@
 [gd_scene load_steps=14 format=4 uid="uid://cxr50oxeme7c"]
 
-[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_p6rmu"]
-[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/hud.tscn" id="2_34hum"]
-[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/player.tscn" id="3_vhkxn"]
-[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/killzone.tscn" id="4_1q7iv"]
+[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://src/globals/game_manager.gd" id="1_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://src/ui/hud.tscn" id="2_34hum"]
+[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://src/characters/player.tscn" id="3_vhkxn"]
+[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://src/mechanics/killzone.tscn" id="4_1q7iv"]
 [ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_gj3kh"]
 [ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="6_myogd"]
-[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/checkpoint.tscn" id="7_s4l03"]
-[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/spike.tscn" id="8_ypncs"]
-[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/coin.tscn" id="9_0qejo"]
-[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/portal.tscn" id="10_erlbe"]
+[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://src/mechanics/checkpoint.tscn" id="7_s4l03"]
+[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://src/enemies/spike.tscn" id="8_ypncs"]
+[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://src/collectibles/coin.tscn" id="9_0qejo"]
+[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://src/mechanics/portal.tscn" id="10_erlbe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dlxjb"]
 
