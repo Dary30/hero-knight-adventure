@@ -1,22 +1,22 @@
 [gd_scene load_steps=19 format=4 uid="uid://cjk52g800ny18"]
 
-[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_lha2r"]
-[ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="2_6owa4"]
-[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/HUD.tscn" id="2_n5pya"]
-[ext_resource type="PackedScene" uid="uid://ok04vuhkcj8q" path="res://scenes/platforms/GrassPlatform.tscn" id="3_n5pya"]
-[ext_resource type="PackedScene" uid="uid://cnihaawxxaaou" path="res://scenes/platforms/YellowGrassPlatform.tscn" id="4_kypp1"]
-[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/Coin.tscn" id="5_ukjja"]
-[ext_resource type="PackedScene" uid="uid://c0x7pjhbjon4p" path="res://scenes/enemies/GreenSlime.tscn" id="7_njy47"]
-[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/Spike.tscn" id="8_j7nyf"]
-[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/Player.tscn" id="9_xbvxr"]
-[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/Killzone.tscn" id="10_bspq0"]
-[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/Portal.tscn" id="11_dqba7"]
-[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/Checkpoint.tscn" id="12_6owa4"]
+[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_iav0o"]
+[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/hud.tscn" id="2_dnkej"]
+[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/player.tscn" id="3_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/killzone.tscn" id="4_wtwp4"]
+[ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_iwr0g"]
+[ext_resource type="PackedScene" uid="uid://ok04vuhkcj8q" path="res://scenes/platforms/grass_platform.tscn" id="6_bahl2"]
+[ext_resource type="PackedScene" uid="uid://cnihaawxxaaou" path="res://scenes/platforms/yellow_grass_platform.tscn" id="7_np2pn"]
+[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/coin.tscn" id="8_v6ha0"]
+[ext_resource type="PackedScene" uid="uid://c0x7pjhbjon4p" path="res://scenes/enemies/green_slime.tscn" id="9_gmpev"]
+[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/spike.tscn" id="10_mkypq"]
+[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/checkpoint.tscn" id="11_ndtll"]
+[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/portal.tscn" id="12_7h2jl"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wn3nv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lha2r"]
-texture = ExtResource("2_6owa4")
+texture = ExtResource("5_iwr0g")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -223,14 +223,14 @@ _data = {
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_lha2r")
+script = ExtResource("1_iav0o")
 
-[node name="HUD" parent="." instance=ExtResource("2_n5pya")]
+[node name="HUD" parent="." instance=ExtResource("2_dnkej")]
 
-[node name="Player" parent="." instance=ExtResource("9_xbvxr")]
+[node name="Player" parent="." instance=ExtResource("3_mm8aj")]
 position = Vector2(50, 445)
 
-[node name="Killzone" parent="." instance=ExtResource("10_bspq0")]
+[node name="Killzone" parent="." instance=ExtResource("4_wtwp4")]
 position = Vector2(55, 560)
 monitorable = false
 
@@ -261,10 +261,10 @@ tile_set = SubResource("TileSet_5pb5x")
 
 [node name="Platforms" type="Node" parent="."]
 
-[node name="Platform" parent="Platforms" instance=ExtResource("3_n5pya")]
+[node name="Platform" parent="Platforms" instance=ExtResource("6_bahl2")]
 position = Vector2(40, 416)
 
-[node name="YellowGrassPlatform" parent="Platforms" instance=ExtResource("4_kypp1")]
+[node name="YellowGrassPlatform" parent="Platforms" instance=ExtResource("7_np2pn")]
 position = Vector2(328, 464)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/YellowGrassPlatform"]
@@ -275,35 +275,37 @@ autoplay = "move"
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("5_ukjja")]
+[node name="Coin" parent="Coins" instance=ExtResource("8_v6ha0")]
 position = Vector2(171, 481)
 
-[node name="Coin2" parent="Coins" instance=ExtResource("5_ukjja")]
+[node name="Coin2" parent="Coins" instance=ExtResource("8_v6ha0")]
 position = Vector2(107, 369)
 
-[node name="Coin3" parent="Coins" instance=ExtResource("5_ukjja")]
+[node name="Coin3" parent="Coins" instance=ExtResource("8_v6ha0")]
 position = Vector2(383, 418)
 
-[node name="Coin4" parent="Coins" instance=ExtResource("5_ukjja")]
+[node name="Coin4" parent="Coins" instance=ExtResource("8_v6ha0")]
 z_index = -1
 position = Vector2(11, 409)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="GreenSlime" parent="Enemies" instance=ExtResource("7_njy47")]
+[node name="GreenSlime" parent="Enemies" instance=ExtResource("9_gmpev")]
 position = Vector2(617, 467)
 
-[node name="Spike" parent="Enemies" instance=ExtResource("8_j7nyf")]
+[node name="Spike" parent="Enemies" instance=ExtResource("10_mkypq")]
 position = Vector2(186, 483)
 
 [node name="Checkpoints" type="Node" parent="."]
 
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("12_6owa4")]
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("11_ndtll")]
 position = Vector2(44, 437)
 
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("12_6owa4")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("11_ndtll")]
 position = Vector2(492, 469)
 
-[node name="Portal" parent="." instance=ExtResource("11_dqba7")]
+[node name="Portal" parent="." instance=ExtResource("12_7h2jl")]
 z_index = -1
 position = Vector2(664, 130)
+
+[connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]

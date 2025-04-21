@@ -4,7 +4,7 @@ extends Node2D
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Player:
 		var current_level = int(get_tree().current_scene.name)
-		var next_level_path = "res://scenes/levels/Level" + str(current_level + 1) + ".tscn"
+		var next_level_path = "res://scenes/levels/level_" + str(current_level + 1) + ".tscn"
 		call_deferred("change_level", next_level_path)
 
 

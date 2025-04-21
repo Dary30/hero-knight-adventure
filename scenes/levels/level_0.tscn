@@ -1,20 +1,20 @@
 [gd_scene load_steps=14 format=4 uid="uid://cxr50oxeme7c"]
 
-[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_ue060"]
-[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/HUD.tscn" id="2_ue060"]
-[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/Player.tscn" id="3_c2uwi"]
-[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/Killzone.tscn" id="4_n5l3n"]
-[ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_6se2n"]
-[ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="6_hsw41"]
-[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/Checkpoint.tscn" id="7_auvjl"]
-[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/Spike.tscn" id="8_l5fl4"]
-[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/Coin.tscn" id="9_nx170"]
-[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/Portal.tscn" id="11_oswwn"]
+[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://scripts/game_manager.gd" id="1_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://scenes/ui/hud.tscn" id="2_34hum"]
+[ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://scenes/characters/player.tscn" id="3_vhkxn"]
+[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/killzone.tscn" id="4_1q7iv"]
+[ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_gj3kh"]
+[ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="6_myogd"]
+[ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://scenes/mechanics/checkpoint.tscn" id="7_s4l03"]
+[ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://scenes/enemies/spike.tscn" id="8_ypncs"]
+[ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://scenes/collectibles/coin.tscn" id="9_0qejo"]
+[ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://scenes/mechanics/portal.tscn" id="10_erlbe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dlxjb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_af4br"]
-texture = ExtResource("5_6se2n")
+texture = ExtResource("5_gj3kh")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -184,14 +184,14 @@ sources/0 = SubResource("TileSetAtlasSource_af4br")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_ue060")
+script = ExtResource("1_p6rmu")
 
-[node name="HUD" parent="." instance=ExtResource("2_ue060")]
+[node name="HUD" parent="." instance=ExtResource("2_34hum")]
 
-[node name="Player" parent="." instance=ExtResource("3_c2uwi")]
+[node name="Player" parent="." instance=ExtResource("3_vhkxn")]
 position = Vector2(64, 445)
 
-[node name="Killzone" parent="." instance=ExtResource("4_n5l3n")]
+[node name="Killzone" parent="." instance=ExtResource("4_1q7iv")]
 position = Vector2(80, 546)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
@@ -224,7 +224,7 @@ offset_left = 90.0
 offset_top = 420.0
 offset_right = 215.0
 offset_bottom = 428.0
-theme_override_fonts/font = ExtResource("6_hsw41")
+theme_override_fonts/font = ExtResource("6_myogd")
 theme_override_font_sizes/font_size = 8
 text = "Press WASD to move."
 metadata/_edit_use_anchors_ = true
@@ -234,7 +234,7 @@ offset_left = 431.0
 offset_top = 400.0
 offset_right = 556.0
 offset_bottom = 408.0
-theme_override_fonts/font = ExtResource("6_hsw41")
+theme_override_fonts/font = ExtResource("6_myogd")
 theme_override_font_sizes/font_size = 8
 text = "Press space to jump"
 metadata/_edit_use_anchors_ = true
@@ -244,7 +244,7 @@ offset_left = 911.0
 offset_top = 418.0
 offset_right = 1057.0
 offset_bottom = 426.0
-theme_override_fonts/font = ExtResource("6_hsw41")
+theme_override_fonts/font = ExtResource("6_myogd")
 theme_override_font_sizes/font_size = 8
 text = "Oh look... A checkpoint!"
 metadata/_edit_use_anchors_ = true
@@ -254,51 +254,51 @@ offset_left = 1244.0
 offset_top = 299.0
 offset_right = 1372.0
 offset_bottom = 307.0
-theme_override_fonts/font = ExtResource("6_hsw41")
+theme_override_fonts/font = ExtResource("6_myogd")
 theme_override_font_sizes/font_size = 8
 text = "SPIKES!!! Be careful."
 metadata/_edit_use_anchors_ = true
 
 [node name="Checkpoints" type="Node" parent="."]
 
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_auvjl")]
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_s4l03")]
 position = Vector2(59, 437)
 
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_auvjl")]
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_s4l03")]
 position = Vector2(1006, 453)
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Spike" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1370, 339)
 
-[node name="Spike2" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike2" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1354, 339)
 
-[node name="Spike3" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike3" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1338, 339)
 
-[node name="Spike4" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike4" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1402, 323)
 
-[node name="Spike5" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike5" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1658, 227)
 
-[node name="Spike6" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike6" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1946, 211)
 
-[node name="Spike7" parent="Enemies" instance=ExtResource("8_l5fl4")]
+[node name="Spike7" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1962, 211)
 
 [node name="Coins" type="Node" parent="."]
 
-[node name="Coin" parent="Coins" instance=ExtResource("9_nx170")]
+[node name="Coin" parent="Coins" instance=ExtResource("9_0qejo")]
 position = Vector2(171, 449)
 
-[node name="Coin2" parent="Coins" instance=ExtResource("9_nx170")]
+[node name="Coin2" parent="Coins" instance=ExtResource("9_0qejo")]
 position = Vector2(187, 449)
 
-[node name="Node2D" parent="." instance=ExtResource("11_oswwn")]
+[node name="Node2D" parent="." instance=ExtResource("10_erlbe")]
 position = Vector2(208, 432)
 
 [connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]

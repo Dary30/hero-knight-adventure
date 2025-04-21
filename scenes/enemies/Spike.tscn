@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cfysjm623s8jh"]
 
 [ext_resource type="Texture2D" uid="uid://bqdbvt00tr1dd" path="res://assets/sprites/spike.png" id="1_uiy7f"]
-[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/Killzone.tscn" id="2_alo23"]
+[ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://scenes/mechanics/killzone.tscn" id="2_alo23"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_alo23"]
 atlas = ExtResource("1_uiy7f")
