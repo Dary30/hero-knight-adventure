@@ -302,7 +302,7 @@ position = Vector2(186, 483)
 position = Vector2(44, 437)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("11_ndtll")]
-position = Vector2(492, 469)
+position = Vector2(478, 437)
 
 [node name="Portal" parent="." instance=ExtResource("12_7h2jl")]
 z_index = -1
