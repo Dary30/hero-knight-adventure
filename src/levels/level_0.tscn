@@ -234,10 +234,10 @@ text = "Press WASD to move."
 metadata/_edit_use_anchors_ = true
 
 [node name="Jump" type="Label" parent="Labels"]
-offset_left = 406.0
-offset_top = 417.0
-offset_right = 531.0
-offset_bottom = 425.0
+offset_left = 414.0
+offset_top = 404.0
+offset_right = 539.0
+offset_bottom = 412.0
 theme_override_fonts/font = ExtResource("6_myogd")
 theme_override_font_sizes/font_size = 8
 text = "Press space to jump"
@@ -334,7 +334,7 @@ position = Vector2(1419, 321)
 position = Vector2(1673, 188)
 
 [node name="Coin13" parent="Coins" instance=ExtResource("9_0qejo")]
-position = Vector2(1794, 210)
+position = Vector2(1765, 156)
 
 [node name="Coin14" parent="Coins" instance=ExtResource("9_0qejo")]
 position = Vector2(1835, 210)
