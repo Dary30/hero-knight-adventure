@@ -131,7 +131,10 @@ position = Vector2(11, 409)
 position = Vector2(617, 467)
 
 [node name="Spike" parent="Enemies" instance=ExtResource("10_mkypq")]
-position = Vector2(186, 483)
+position = Vector2(186, 484)
+
+[node name="Spike2" parent="Enemies" instance=ExtResource("10_mkypq")]
+position = Vector2(826, 244)
 
 [node name="Checkpoints" type="Node" parent="."]
 

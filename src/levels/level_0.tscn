@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cxr50oxeme7c"]
+[gd_scene load_steps=15 format=4 uid="uid://cxr50oxeme7c"]
 
 [ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://src/globals/game_manager.gd" id="1_p6rmu"]
 [ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://src/ui/hud.tscn" id="2_34hum"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ip4knfpma1nj" path="res://src/mechanics/checkpoint.tscn" id="7_s4l03"]
 [ext_resource type="PackedScene" uid="uid://cfysjm623s8jh" path="res://src/enemies/spike.tscn" id="8_ypncs"]
 [ext_resource type="PackedScene" uid="uid://c8l0nchdctlbn" path="res://src/collectibles/coin.tscn" id="9_0qejo"]
+[ext_resource type="PackedScene" uid="uid://c0x7pjhbjon4p" path="res://src/enemies/green_slime.tscn" id="9_4qqfl"]
 [ext_resource type="PackedScene" uid="uid://ljk0lsnem58n" path="res://src/mechanics/portal.tscn" id="10_erlbe"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dlxjb"]
@@ -273,26 +274,29 @@ position = Vector2(1006, 453)
 
 [node name="Enemies" type="Node" parent="."]
 
+[node name="GreenSlime" parent="Enemies" instance=ExtResource("9_4qqfl")]
+position = Vector2(617, 467)
+
 [node name="Spike" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1370, 339)
+position = Vector2(1370, 340)
 
 [node name="Spike2" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1354, 339)
+position = Vector2(1354, 340)
 
 [node name="Spike3" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1338, 339)
+position = Vector2(1338, 340)
 
 [node name="Spike4" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1402, 323)
+position = Vector2(1402, 324)
 
 [node name="Spike5" parent="Enemies" instance=ExtResource("8_ypncs")]
 position = Vector2(1658, 227)
 
 [node name="Spike6" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1946, 211)
+position = Vector2(1946, 212)
 
 [node name="Spike7" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1962, 211)
+position = Vector2(1962, 212)
 
 [node name="Coins" type="Node" parent="."]
 
