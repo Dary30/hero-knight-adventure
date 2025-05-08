@@ -1,10 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmblv1y3xxdmi"]
+[gd_scene load_steps=17 format=3 uid="uid://bmblv1y3xxdmi"]
 
 [ext_resource type="Script" uid="uid://bx7q1bslib7jp" path="res://src/ui/main_menu.gd" id="1_qoywa"]
 [ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_f0s2b"]
+[ext_resource type="Texture2D" uid="uid://cbxfte8wfk7sh" path="res://assets/sprites/background.png" id="2_ljhhu"]
 [ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="3_f0s2b"]
 [ext_resource type="Script" uid="uid://r1itil0ctj7f" path="res://src/audio/volume_slider.gd" id="4_5mgu5"]
 [ext_resource type="Script" uid="uid://k1p7jahhqcdc" path="res://src/ui/fullscreen_control.gd" id="5_h03rr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35tjg"]
+texture = ExtResource("2_ljhhu")
+modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqorp"]
 bg_color = Color(0.716296, 0.716296, 0.716296, 1)
@@ -37,7 +42,7 @@ shadow_size = 5
 shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h03rr"]
-bg_color = Color(0, 0, 0, 0.156863)
+bg_color = Color(0.169245, 0.169245, 0.169245, 0.847059)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoywa"]
 bg_color = Color(0.716296, 0.716296, 0.716296, 1)
@@ -85,6 +90,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qoywa")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_35tjg")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
