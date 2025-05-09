@@ -10,15 +10,19 @@ config_version=5
 
 [application]
 
-config/name="Platformer"
+config/name="Hero Knight Adventure"
 run/main_scene="uid://bmblv1y3xxdmi"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://bap708ljyouc5"
 
 [autoload]
 
 GameManager="*res://src/globals/game_manager.gd"
 Music="*res://src/audio/music.tscn"
+
+[display]
+
+window/size/mode=2
 
 [input]
 
