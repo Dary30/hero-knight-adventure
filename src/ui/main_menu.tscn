@@ -1,78 +1,22 @@
-[gd_scene load_steps=17 format=3 uid="uid://bmblv1y3xxdmi"]
+[gd_scene load_steps=15 format=3 uid="uid://bmblv1y3xxdmi"]
 
 [ext_resource type="Script" uid="uid://bx7q1bslib7jp" path="res://src/ui/main_menu.gd" id="1_qoywa"]
 [ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_f0s2b"]
 [ext_resource type="Texture2D" uid="uid://cbxfte8wfk7sh" path="res://assets/sprites/background.png" id="2_ljhhu"]
 [ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="3_f0s2b"]
 [ext_resource type="Script" uid="uid://r1itil0ctj7f" path="res://src/audio/volume_slider.gd" id="4_5mgu5"]
+[ext_resource type="StyleBox" uid="uid://bwc4rmmkhf126" path="res://assets/themes/focus.tres" id="4_35tjg"]
 [ext_resource type="Script" uid="uid://k1p7jahhqcdc" path="res://src/ui/fullscreen_control.gd" id="5_h03rr"]
+[ext_resource type="StyleBox" uid="uid://v2bmtpbhyi2t" path="res://assets/themes/hover.tres" id="5_vob5f"]
+[ext_resource type="StyleBox" uid="uid://dnxtvybveond6" path="res://assets/themes/pressed.tres" id="6_0prml"]
+[ext_resource type="StyleBox" uid="uid://da006kpa123cw" path="res://assets/themes/normal.tres" id="7_yipxn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35tjg"]
 texture = ExtResource("2_ljhhu")
 modulate_color = Color(0.408329, 0.408329, 0.408329, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqorp"]
-bg_color = Color(0.716296, 0.716296, 0.716296, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wh52"]
-bg_color = Color(0.2484, 0.2484, 0.2484, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ykhv"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h03rr"]
 bg_color = Color(0.169245, 0.169245, 0.169245, 0.847059)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qoywa"]
-bg_color = Color(0.716296, 0.716296, 0.716296, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0s2b"]
-bg_color = Color(0.2484, 0.2484, 0.2484, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mgu5"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0, 0, 0, 0.301961)
-shadow_size = 5
-shadow_offset = Vector2(0, 3.5)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_qoywa"]
 color = Color(1, 1, 1, 1)
@@ -145,9 +89,10 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f0s2b")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
+theme_override_styles/focus = ExtResource("4_35tjg")
+theme_override_styles/hover = ExtResource("5_vob5f")
+theme_override_styles/pressed = ExtResource("6_0prml")
+theme_override_styles/normal = ExtResource("7_yipxn")
 text = "Play"
 
 [node name="Option" type="Button" parent="MainButtons"]
@@ -159,9 +104,10 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f0s2b")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
+theme_override_styles/focus = ExtResource("4_35tjg")
+theme_override_styles/hover = ExtResource("5_vob5f")
+theme_override_styles/pressed = ExtResource("6_0prml")
+theme_override_styles/normal = ExtResource("7_yipxn")
 text = "Options"
 
 [node name="Quit" type="Button" parent="MainButtons"]
@@ -173,9 +119,10 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f0s2b")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_yqorp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2wh52")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
+theme_override_styles/focus = ExtResource("4_35tjg")
+theme_override_styles/hover = ExtResource("5_vob5f")
+theme_override_styles/pressed = ExtResource("6_0prml")
+theme_override_styles/normal = ExtResource("7_yipxn")
 text = "Quit"
 
 [node name="OptionMenu" type="Panel" parent="."]
@@ -231,9 +178,10 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_f0s2b")
 theme_override_font_sizes/font_size = 25
-theme_override_styles/hover = SubResource("StyleBoxFlat_qoywa")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_f0s2b")
-theme_override_styles/normal = SubResource("StyleBoxFlat_5mgu5")
+theme_override_styles/focus = ExtResource("4_35tjg")
+theme_override_styles/hover = ExtResource("5_vob5f")
+theme_override_styles/pressed = ExtResource("6_0prml")
+theme_override_styles/normal = ExtResource("7_yipxn")
 text = "Back"
 
 [node name="GridContainer2" type="GridContainer" parent="OptionMenu"]

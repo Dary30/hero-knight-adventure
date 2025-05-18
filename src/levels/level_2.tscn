@@ -32,7 +32,7 @@ monitorable = false
 shape = SubResource("WorldBoundaryShape2D_2jbrd")
 
 [node name="Portal" parent="." instance=ExtResource("5_2jbrd")]
-position = Vector2(1649, 145)
+position = Vector2(1649, 146)
 
 [node name="LayerHolder" type="Node2D" parent="."]
 
