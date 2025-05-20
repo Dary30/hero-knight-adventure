@@ -1,13 +1,15 @@
 extends CanvasLayer
 
 @onready var pause_menu: CanvasLayer = $"."
-@onready var pause_buttons: Panel = $Panel
+@onready var pause_buttons: Panel = $PausePanel
 @onready var option_menu: Panel = $OptionMenu
 
 
 func _ready() -> void:
 	pause_menu.visible = false
 	option_menu.visible = false
+	print("Music volume: ", AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music")))
+
 
 
 func _input(event: InputEvent) -> void:

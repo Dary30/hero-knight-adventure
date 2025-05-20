@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bmblv1y3xxdmi"]
+[gd_scene load_steps=16 format=3 uid="uid://bmblv1y3xxdmi"]
 
 [ext_resource type="Script" uid="uid://bx7q1bslib7jp" path="res://src/ui/main_menu.gd" id="1_qoywa"]
 [ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_f0s2b"]
@@ -25,6 +25,8 @@ thickness = 6
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_f0s2b"]
 color = Color(0.346187, 0.547705, 1, 1)
 thickness = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vob5f"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -218,7 +220,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_f0s2b")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_f0s2b")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("4_5mgu5")
 bus_name = "Master"
 
@@ -239,7 +240,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_f0s2b")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_f0s2b")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("4_5mgu5")
 bus_name = "Music"
 
@@ -261,7 +261,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_f0s2b")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_f0s2b")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("4_5mgu5")
 bus_name = "SFX"
 
@@ -290,6 +289,7 @@ text = "Fullscreen"
 
 [node name="CheckBox" type="CheckBox" parent="OptionMenu/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vob5f")
 script = ExtResource("5_h03rr")
 
 [connection signal="pressed" from="MainButtons/Play" to="." method="_on_play_pressed"]

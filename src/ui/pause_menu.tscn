@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cv6y0ycynew2w"]
+[gd_scene load_steps=15 format=3 uid="uid://cv6y0ycynew2w"]
 
 [ext_resource type="Script" uid="uid://dvjr8mj75pgk" path="res://src/ui/pause_menu.gd" id="1_kcxqm"]
 [ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_yqfnv"]
@@ -24,11 +24,13 @@ thickness = 6
 color = Color(0.346187, 0.547705, 1, 1)
 thickness = 6
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i6wv5"]
+
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_kcxqm")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="PausePanel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,7 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mmpqy")
 
-[node name="Paused" type="Label" parent="Panel"]
+[node name="Paused" type="Label" parent="PausePanel"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -56,7 +58,7 @@ text = "PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PausedButtons" type="VBoxContainer" parent="Panel"]
+[node name="PausedButtons" type="VBoxContainer" parent="PausePanel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="Resume" type="Button" parent="Panel/PausedButtons"]
+[node name="Resume" type="Button" parent="PausePanel/PausedButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -86,7 +88,7 @@ theme_override_styles/pressed = ExtResource("4_kcxqm")
 theme_override_styles/normal = ExtResource("5_ww1cn")
 text = "Resume"
 
-[node name="Options" type="Button" parent="Panel/PausedButtons"]
+[node name="Options" type="Button" parent="PausePanel/PausedButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -101,7 +103,7 @@ theme_override_styles/pressed = ExtResource("4_kcxqm")
 theme_override_styles/normal = ExtResource("5_ww1cn")
 text = "Options"
 
-[node name="MainMenu" type="Button" parent="Panel/PausedButtons"]
+[node name="MainMenu" type="Button" parent="PausePanel/PausedButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -116,7 +118,7 @@ theme_override_styles/pressed = ExtResource("4_kcxqm")
 theme_override_styles/normal = ExtResource("5_ww1cn")
 text = "Main Menu"
 
-[node name="Quit" type="Button" parent="Panel/PausedButtons"]
+[node name="Quit" type="Button" parent="PausePanel/PausedButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -223,7 +225,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("8_s6qu5")
 bus_name = "Master"
 
@@ -244,7 +245,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("8_s6qu5")
 bus_name = "Music"
 
@@ -266,7 +266,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
 max_value = 1.0
 step = 0.001
-value = 0.5
 script = ExtResource("8_s6qu5")
 bus_name = "SFX"
 
@@ -295,12 +294,13 @@ text = "Fullscreen"
 
 [node name="CheckBox" type="CheckBox" parent="OptionMenu/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i6wv5")
 script = ExtResource("9_nl24f")
 
-[connection signal="pressed" from="Panel/PausedButtons/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Panel/PausedButtons/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Panel/PausedButtons/MainMenu" to="." method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Panel/PausedButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PausePanel/PausedButtons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PausePanel/PausedButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="PausePanel/PausedButtons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="PausePanel/PausedButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="OptionMenu/MarginContainer/Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="OptionMenu/GridContainer2/MasterSlider" to="OptionMenu/GridContainer2/MasterSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="OptionMenu/GridContainer2/MusicSlider" to="OptionMenu/GridContainer2/MusicSlider" method="_on_value_changed"]

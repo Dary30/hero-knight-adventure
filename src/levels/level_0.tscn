@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=4 uid="uid://cxr50oxeme7c"]
 
-[ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://src/globals/game_manager.gd" id="1_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://b6h6gxg3cy1bf" path="res://src/globals/game_manager.tscn" id="1_mv7ds"]
 [ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://src/ui/hud.tscn" id="2_34hum"]
 [ext_resource type="PackedScene" uid="uid://cv6y0ycynew2w" path="res://src/ui/pause_menu.tscn" id="3_mv7ds"]
 [ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://src/characters/player.tscn" id="3_vhkxn"]
@@ -184,9 +184,8 @@ sources/0 = SubResource("TileSetAtlasSource_af4br")
 
 [node name="Level0" type="Node2D"]
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" parent="." instance=ExtResource("1_mv7ds")]
 unique_name_in_owner = true
-script = ExtResource("1_p6rmu")
 
 [node name="HUD" parent="." instance=ExtResource("2_34hum")]
 
@@ -355,5 +354,3 @@ position = Vector2(1962, 212)
 
 [node name="GreenSlime" parent="Enemies/Slimes" instance=ExtResource("9_4qqfl")]
 position = Vector2(617, 467)
-
-[connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]
