@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=4 uid="uid://cjk52g800ny18"]
+[gd_scene load_steps=18 format=4 uid="uid://cjk52g800ny18"]
 
 [ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://src/globals/game_manager.gd" id="1_iav0o"]
 [ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://src/ui/hud.tscn" id="2_dnkej"]
 [ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://src/characters/player.tscn" id="3_mm8aj"]
+[ext_resource type="PackedScene" uid="uid://cv6y0ycynew2w" path="res://src/ui/pause_menu.tscn" id="3_vo5gq"]
 [ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://src/mechanics/killzone.tscn" id="4_wtwp4"]
 [ext_resource type="PackedScene" uid="uid://ok04vuhkcj8q" path="res://src/platforms/grass_platform.tscn" id="6_bahl2"]
 [ext_resource type="TileSet" uid="uid://b730ntj7pxsps" path="res://assets/tilesets/my_tileset.tres" id="6_riplu"]
@@ -59,6 +60,8 @@ unique_name_in_owner = true
 script = ExtResource("1_iav0o")
 
 [node name="HUD" parent="." instance=ExtResource("2_dnkej")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_vo5gq")]
 
 [node name="Player" parent="." instance=ExtResource("3_mm8aj")]
 position = Vector2(50, 445)
@@ -125,17 +128,6 @@ position = Vector2(383, 418)
 z_index = -1
 position = Vector2(11, 409)
 
-[node name="Enemies" type="Node" parent="."]
-
-[node name="GreenSlime" parent="Enemies" instance=ExtResource("9_gmpev")]
-position = Vector2(617, 467)
-
-[node name="Spike" parent="Enemies" instance=ExtResource("10_mkypq")]
-position = Vector2(186, 484)
-
-[node name="Spike2" parent="Enemies" instance=ExtResource("10_mkypq")]
-position = Vector2(826, 244)
-
 [node name="Checkpoints" type="Node" parent="."]
 
 [node name="Checkpoint" parent="Checkpoints" instance=ExtResource("11_ndtll")]
@@ -143,5 +135,20 @@ position = Vector2(44, 437)
 
 [node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("11_ndtll")]
 position = Vector2(478, 437)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Spikes" type="Node" parent="Enemies"]
+
+[node name="Spike" parent="Enemies/Spikes" instance=ExtResource("10_mkypq")]
+position = Vector2(186, 484)
+
+[node name="Spike2" parent="Enemies/Spikes" instance=ExtResource("10_mkypq")]
+position = Vector2(826, 244)
+
+[node name="Slimes" type="Node" parent="Enemies"]
+
+[node name="GreenSlime" parent="Enemies/Slimes" instance=ExtResource("9_gmpev")]
+position = Vector2(617, 467)
 
 [connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]

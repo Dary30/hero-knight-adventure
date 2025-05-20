@@ -1,0 +1,308 @@
+[gd_scene load_steps=14 format=3 uid="uid://cv6y0ycynew2w"]
+
+[ext_resource type="Script" uid="uid://dvjr8mj75pgk" path="res://src/ui/pause_menu.gd" id="1_kcxqm"]
+[ext_resource type="FontFile" uid="uid://bdpp3kapmnxd4" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_yqfnv"]
+[ext_resource type="StyleBox" uid="uid://bwc4rmmkhf126" path="res://assets/themes/focus.tres" id="2_mmpqy"]
+[ext_resource type="StyleBox" uid="uid://v2bmtpbhyi2t" path="res://assets/themes/hover.tres" id="3_cttwf"]
+[ext_resource type="StyleBox" uid="uid://dnxtvybveond6" path="res://assets/themes/pressed.tres" id="4_kcxqm"]
+[ext_resource type="StyleBox" uid="uid://da006kpa123cw" path="res://assets/themes/normal.tres" id="5_ww1cn"]
+[ext_resource type="FontFile" uid="uid://rcf8py33vxyi" path="res://assets/fonts/PixelOperator8.ttf" id="7_i6wv5"]
+[ext_resource type="Script" uid="uid://r1itil0ctj7f" path="res://src/audio/volume_slider.gd" id="8_s6qu5"]
+[ext_resource type="Script" uid="uid://k1p7jahhqcdc" path="res://src/ui/fullscreen_control.gd" id="9_nl24f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmpqy"]
+bg_color = Color(0.169245, 0.169245, 0.169245, 0.847059)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sog0k"]
+bg_color = Color(0.169245, 0.169245, 0.169245, 0.847059)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ykuh2"]
+color = Color(1, 1, 1, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nqe8q"]
+color = Color(0.346187, 0.547705, 1, 1)
+thickness = 6
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_kcxqm")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -204.5
+offset_right = 256.0
+offset_bottom = 204.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmpqy")
+
+[node name="Paused" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 35
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PausedButtons" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -85.0
+offset_right = 136.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="Panel/PausedButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("2_mmpqy")
+theme_override_styles/hover = ExtResource("3_cttwf")
+theme_override_styles/pressed = ExtResource("4_kcxqm")
+theme_override_styles/normal = ExtResource("5_ww1cn")
+text = "Resume"
+
+[node name="Options" type="Button" parent="Panel/PausedButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("2_mmpqy")
+theme_override_styles/hover = ExtResource("3_cttwf")
+theme_override_styles/pressed = ExtResource("4_kcxqm")
+theme_override_styles/normal = ExtResource("5_ww1cn")
+text = "Options"
+
+[node name="MainMenu" type="Button" parent="Panel/PausedButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("2_mmpqy")
+theme_override_styles/hover = ExtResource("3_cttwf")
+theme_override_styles/pressed = ExtResource("4_kcxqm")
+theme_override_styles/normal = ExtResource("5_ww1cn")
+text = "Main Menu"
+
+[node name="Quit" type="Button" parent="Panel/PausedButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("2_mmpqy")
+theme_override_styles/hover = ExtResource("3_cttwf")
+theme_override_styles/pressed = ExtResource("4_kcxqm")
+theme_override_styles/normal = ExtResource("5_ww1cn")
+text = "Quit"
+
+[node name="OptionMenu" type="Panel" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -204.5
+offset_right = 256.0
+offset_bottom = 204.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sog0k")
+
+[node name="Options" type="Label" parent="OptionMenu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 35
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="OptionMenu"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.5
+offset_top = -75.0
+offset_right = 65.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="Back" type="Button" parent="OptionMenu/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_yqfnv")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = ExtResource("2_mmpqy")
+theme_override_styles/hover = ExtResource("3_cttwf")
+theme_override_styles/pressed = ExtResource("4_kcxqm")
+theme_override_styles/normal = ExtResource("5_ww1cn")
+text = "Back"
+
+[node name="GridContainer2" type="GridContainer" parent="OptionMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.5
+offset_top = -92.5
+offset_right = 160.5
+offset_bottom = -12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Master" type="Label" parent="OptionMenu/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_i6wv5")
+theme_override_font_sizes/font_size = 16
+text = "Master"
+
+[node name="MasterSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_ykuh2")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("8_s6qu5")
+bus_name = "Master"
+
+[node name="Music" type="Label" parent="OptionMenu/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_i6wv5")
+theme_override_font_sizes/font_size = 16
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_ykuh2")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("8_s6qu5")
+bus_name = "Music"
+
+[node name="SFX" type="Label" parent="OptionMenu/GridContainer2"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_i6wv5")
+theme_override_font_sizes/font_size = 16
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/center_grabber = 1
+theme_override_styles/slider = SubResource("StyleBoxLine_ykuh2")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_nqe8q")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_nqe8q")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("8_s6qu5")
+bus_name = "SFX"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OptionMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = 27.5
+offset_right = 83.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Master" type="Label" parent="OptionMenu/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("7_i6wv5")
+theme_override_font_sizes/font_size = 16
+text = "Fullscreen"
+
+[node name="CheckBox" type="CheckBox" parent="OptionMenu/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("9_nl24f")
+
+[connection signal="pressed" from="Panel/PausedButtons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/PausedButtons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Panel/PausedButtons/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/PausedButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="OptionMenu/MarginContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer2/MasterSlider" to="OptionMenu/GridContainer2/MasterSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer2/MusicSlider" to="OptionMenu/GridContainer2/MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer2/SFXSlider" to="OptionMenu/GridContainer2/SFXSlider" method="_on_value_changed"]
+[connection signal="toggled" from="OptionMenu/HBoxContainer/CheckBox" to="OptionMenu/HBoxContainer/CheckBox" method="_on_toggled"]

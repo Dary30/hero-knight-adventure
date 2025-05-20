@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://cxr50oxeme7c"]
+[gd_scene load_steps=16 format=4 uid="uid://cxr50oxeme7c"]
 
 [ext_resource type="Script" uid="uid://6svpc7mr1rmi" path="res://src/globals/game_manager.gd" id="1_p6rmu"]
 [ext_resource type="PackedScene" uid="uid://unsfsl1nuo3c" path="res://src/ui/hud.tscn" id="2_34hum"]
+[ext_resource type="PackedScene" uid="uid://cv6y0ycynew2w" path="res://src/ui/pause_menu.tscn" id="3_mv7ds"]
 [ext_resource type="PackedScene" uid="uid://165lto56x54j" path="res://src/characters/player.tscn" id="3_vhkxn"]
 [ext_resource type="PackedScene" uid="uid://divceca0xdplw" path="res://src/mechanics/killzone.tscn" id="4_1q7iv"]
 [ext_resource type="Texture2D" uid="uid://dsqe6eu8lc7x0" path="res://assets/sprites/world_tileset.png" id="5_gj3kh"]
@@ -189,6 +190,8 @@ script = ExtResource("1_p6rmu")
 
 [node name="HUD" parent="." instance=ExtResource("2_34hum")]
 
+[node name="PauseMenu" parent="." instance=ExtResource("3_mv7ds")]
+
 [node name="Player" parent="." instance=ExtResource("3_vhkxn")]
 position = Vector2(64, 445)
 
@@ -264,40 +267,6 @@ theme_override_font_sizes/font_size = 8
 text = "SPIKES!!! Be careful."
 metadata/_edit_use_anchors_ = true
 
-[node name="Checkpoints" type="Node" parent="."]
-
-[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_s4l03")]
-position = Vector2(59, 437)
-
-[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_s4l03")]
-position = Vector2(1006, 453)
-
-[node name="Enemies" type="Node" parent="."]
-
-[node name="GreenSlime" parent="Enemies" instance=ExtResource("9_4qqfl")]
-position = Vector2(617, 467)
-
-[node name="Spike" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1370, 340)
-
-[node name="Spike2" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1354, 340)
-
-[node name="Spike3" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1338, 340)
-
-[node name="Spike4" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1402, 324)
-
-[node name="Spike5" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1658, 228)
-
-[node name="Spike6" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1946, 212)
-
-[node name="Spike7" parent="Enemies" instance=ExtResource("8_ypncs")]
-position = Vector2(1962, 212)
-
 [node name="Coins" type="Node" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("9_0qejo")]
@@ -348,5 +317,43 @@ position = Vector2(1907, 185)
 
 [node name="Coin16" parent="Coins" instance=ExtResource("9_0qejo")]
 position = Vector2(2123, 193)
+
+[node name="Checkpoints" type="Node" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_s4l03")]
+position = Vector2(59, 437)
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_s4l03")]
+position = Vector2(1006, 453)
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Spikes" type="Node" parent="Enemies"]
+
+[node name="Spike" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1370, 340)
+
+[node name="Spike2" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1354, 340)
+
+[node name="Spike3" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1338, 340)
+
+[node name="Spike4" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1402, 324)
+
+[node name="Spike5" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1658, 228)
+
+[node name="Spike6" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1946, 212)
+
+[node name="Spike7" parent="Enemies/Spikes" instance=ExtResource("8_ypncs")]
+position = Vector2(1962, 212)
+
+[node name="Slimes" type="Node" parent="Enemies"]
+
+[node name="GreenSlime" parent="Enemies/Slimes" instance=ExtResource("9_4qqfl")]
+position = Vector2(617, 467)
 
 [connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]
