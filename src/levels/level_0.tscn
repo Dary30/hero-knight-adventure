@@ -190,6 +190,7 @@ unique_name_in_owner = true
 [node name="HUD" parent="." instance=ExtResource("2_34hum")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_mv7ds")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_vhkxn")]
 position = Vector2(64, 445)

@@ -23,6 +23,7 @@ script = ExtResource("1_ms1y2")
 [node name="HUD" parent="." instance=ExtResource("2_1cvfm")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("3_hs3jm")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("3_ddbfl")]
 position = Vector2(50, 445)
