@@ -355,3 +355,5 @@ position = Vector2(1962, 212)
 
 [node name="GreenSlime" parent="Enemies/Slimes" instance=ExtResource("9_4qqfl")]
 position = Vector2(617, 467)
+
+[connection signal="coins_updated" from="GameManager" to="HUD" method="_update_coin_display"]
