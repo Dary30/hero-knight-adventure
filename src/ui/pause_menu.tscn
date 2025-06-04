@@ -191,7 +191,7 @@ theme_override_styles/pressed = ExtResource("4_kcxqm")
 theme_override_styles/normal = ExtResource("5_ww1cn")
 text = "Back"
 
-[node name="GridContainer2" type="GridContainer" parent="OptionMenu"]
+[node name="GridContainer" type="GridContainer" parent="OptionMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -208,7 +208,7 @@ theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 15
 columns = 2
 
-[node name="Master" type="Label" parent="OptionMenu/GridContainer2"]
+[node name="Master" type="Label" parent="OptionMenu/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 2
@@ -216,7 +216,7 @@ theme_override_fonts/font = ExtResource("7_i6wv5")
 theme_override_font_sizes/font_size = 16
 text = "Master"
 
-[node name="MasterSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+[node name="MasterSlider" type="HSlider" parent="OptionMenu/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_constants/center_grabber = 1
@@ -228,7 +228,7 @@ step = 0.001
 script = ExtResource("8_s6qu5")
 bus_name = "Master"
 
-[node name="Music" type="Label" parent="OptionMenu/GridContainer2"]
+[node name="Music" type="Label" parent="OptionMenu/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 2
@@ -236,7 +236,7 @@ theme_override_fonts/font = ExtResource("7_i6wv5")
 theme_override_font_sizes/font_size = 16
 text = "Music"
 
-[node name="MusicSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+[node name="MusicSlider" type="HSlider" parent="OptionMenu/GridContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_constants/center_grabber = 1
@@ -248,7 +248,7 @@ step = 0.001
 script = ExtResource("8_s6qu5")
 bus_name = "Music"
 
-[node name="SFX" type="Label" parent="OptionMenu/GridContainer2"]
+[node name="SFX" type="Label" parent="OptionMenu/GridContainer"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 2
@@ -256,7 +256,7 @@ theme_override_fonts/font = ExtResource("7_i6wv5")
 theme_override_font_sizes/font_size = 16
 text = "SFX"
 
-[node name="SFXSlider" type="HSlider" parent="OptionMenu/GridContainer2"]
+[node name="SFXSlider" type="HSlider" parent="OptionMenu/GridContainer"]
 custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -302,7 +302,7 @@ script = ExtResource("9_nl24f")
 [connection signal="pressed" from="PausePanel/PausedButtons/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="PausePanel/PausedButtons/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="OptionMenu/MarginContainer/Back" to="." method="_on_back_pressed"]
-[connection signal="value_changed" from="OptionMenu/GridContainer2/MasterSlider" to="OptionMenu/GridContainer2/MasterSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="OptionMenu/GridContainer2/MusicSlider" to="OptionMenu/GridContainer2/MusicSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="OptionMenu/GridContainer2/SFXSlider" to="OptionMenu/GridContainer2/SFXSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer/MasterSlider" to="OptionMenu/GridContainer/MasterSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer/MusicSlider" to="OptionMenu/GridContainer/MusicSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="OptionMenu/GridContainer/SFXSlider" to="OptionMenu/GridContainer/SFXSlider" method="_on_value_changed"]
 [connection signal="toggled" from="OptionMenu/HBoxContainer/CheckBox" to="OptionMenu/HBoxContainer/CheckBox" method="_on_toggled"]
