@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Hero Knight Adventure"
 run/main_scene="uid://bmblv1y3xxdmi"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://bap708ljyouc5"
 
 [autoload]
